@@ -7,6 +7,8 @@ import { Grid, Typography, Box,Container } from "@mui/material";
 import AnalyticEcommerce from "../../components/cards/statistics/AnalyticEcommerce";
 import MyResponsiveCirclePacking from "../../components/charts/cirlclePacking";
 import { TowerA, TowerB ,TowerC,TowerD} from "../../assets/mockData/data";
+import Legends from "../../components/cards/Legends";
+
 import { useState } from "react";
 function StrokeTrail() {
   // state for zoom ogf the node
@@ -62,6 +64,9 @@ function StrokeTrail() {
           />
         </Box>
       )}
+      <Box sx={{ position: "absolute", right: 0, bottom: 70 }}>
+        <Legends/>
+        </Box>
     </Container>
   )
 }

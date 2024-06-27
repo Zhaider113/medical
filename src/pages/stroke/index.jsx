@@ -7,6 +7,8 @@ import AnalyticEcommerce from "../../components/cards/statistics/AnalyticEcommer
 import MyResponsiveCirclePacking from "../../components/charts/cirlclePacking";
 import { TowerA, TowerB ,TowerC,TowerD} from "../../assets/mockData/data";
 import { useState } from "react";
+import Legends from "../../components/cards/Legends";
+
 function Stroke() {
   // state for zoom ogf the node
   const [zoomState, setZoomState] = useState({});
@@ -61,6 +63,9 @@ function Stroke() {
           />
         </Box>
       )}
+      <Box sx={{ position: "absolute", right: 0, bottom: 70 }}>
+        <Legends/>
+        </Box>
     </Container>
   )
 }
