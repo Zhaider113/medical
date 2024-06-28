@@ -12,12 +12,12 @@ import {
 } from "@mui/material";
 
 // project import
-import AnalyticEcommerce from "../../components/cards/statistics/AnalyticEcommerce";
 import MyResponsiveCirclePacking from "../../components/charts/cirlclePacking";
 import { TowerA, TowerB, TowerC, TowerD } from "../../assets/mockData/data";
 import { useState } from "react";
 import MainCard from "../../components/MainCard";
 import Legends from "../../components/cards/Legends";
+import LevelsCard from "../../components/cards/LevelsCard";
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
@@ -65,17 +65,14 @@ const DashboardDefault = () => {
           ))}
         </Grid>
         {showDetails && (
-          <Box sx={{ position: "absolute", top: 70, right: 1 }}>
-            <AnalyticEcommerce
-              title={detailsNode.color}
-              count={detailsNode.data.name}
-              percentage={27.4}
-              isLoss
-              color="warning"
-              extra="$20,395"
-              colorText={detailsNode.color}
-            />
+          <>
+           <Box sx={{ position: "absolute", top: 70, right: 1 }}>
+           
+          <LevelsCard numberOfLevel={2}/>
+
           </Box>
+          </>
+         
         )}
 
         <Box sx={{ position: "absolute", right: 0, bottom: 70 }}>
