@@ -1,12 +1,13 @@
 import React from "react";
 import { ResponsiveCirclePacking } from "@nivo/circle-packing";
-
 export default function MyResponsiveCirclePacking({
   data,
   setZoomedId,
   zoomedId,
   setShowDetails,
   setDetailsNode,
+  detailsNode,
+  tower,
   setSmallestCircleClicked
 }) {
   // Define colors array with default scheme
@@ -88,16 +89,22 @@ export default function MyResponsiveCirclePacking({
           // Root node
           setDetailsNode(node);
           setShowDetails(true);
+
         } else if (node.depth === 3) {
           // Smallest circle node
           setDetailsNode(node);
           setSmallestCircleClicked(true);
-        } else {
-          // Other nodes
+        }  
+        else if (node.depth === 3) {
+          console.log('I am node Depth in index.js cirlepacking component', node.depth);
+          setDetailsNode(node);
+          setSmallestCircleClicked(true);
+        }
+        else {
           setShowDetails(false);
           setSmallestCircleClicked(false);
         }
       }}
     />
   );
-}
+

@@ -15,6 +15,7 @@ import Wireframe from "../wireframe/wireframe";
 import LevelsCard from "../../components/cards/LevelsCard";
 import DetailsCard from "../../components/cards/DetailsCard";
 
+
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
 const DashboardDefault = () => {

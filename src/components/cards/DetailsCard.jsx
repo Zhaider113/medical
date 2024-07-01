@@ -21,6 +21,7 @@ const DetailsCard = ({ data, smallestCircleClicked }) => {
         >
           {data?.type}
         </Typography>
+
       </CardWrapper>
     </PatientDetails>
 
