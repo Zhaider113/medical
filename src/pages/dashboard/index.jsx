@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import ThreeD from "../3d/3d";
 import Wireframe from "../wireframe/wireframe";
 import LevelsCard from "../../components/cards/LevelsCard";
+import DetailsCard from "../../components/cards/DetailsCard";
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
@@ -24,7 +25,7 @@ const DashboardDefault = () => {
   const [detailsNode, setDetailsNode] = useState(null);
   // redux tab global state
   const tabIndex = useSelector((state) => state.HeaderTab);
-
+  const [smallestCircleClicked, setSmallestCircleClicked] = useState(false);
   const towersData = [
     { id: "towerA", data: TowerA },
     { id: "towerB", data: TowerB },
@@ -75,6 +76,7 @@ const DashboardDefault = () => {
                         showDetails={showDetails}
                         setDetailsNode={(node) => setDetailsNode({ ...node, tower })}
                         detailsNode={detailsNode}
+                        setSmallestCircleClicked={setSmallestCircleClicked}
                       />
                     </Box>
                   </Grid>
@@ -89,6 +91,16 @@ const DashboardDefault = () => {
                   />
                 </Box>
               )}
+              {
+                smallestCircleClicked && detailsNode && (
+
+                  <DetailsCard
+                    data={detailsNode.data}
+                    smallestCircleClicked={smallestCircleClicked}
+                  />
+
+                )
+              }
               <Box sx={{ position: "absolute", right: 0, bottom: 70 }}>
                 <Legends />
               </Box>
