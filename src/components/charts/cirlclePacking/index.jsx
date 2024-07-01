@@ -11,13 +11,22 @@ export default function MyResponsiveCirclePacking({
   tower,
   setSmallestCircleClicked
 }) {
+
+  const colors = [
+    "hsl(210, 70%, 50%)",
+    "hsl(120, 70%, 50%)",
+    "hsl(60, 70%, 50%)",
+    "hsl(300, 70%, 50%)",
+    "hsl(0, 70%, 50%)",
+  ];
+  
   return (
     <ResponsiveCirclePacking
       data={data}
       margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
       id="name"
       value="loc"
-      colors={{ scheme: "nivo" }}
+      colors={colors} // Custom color array
       childColor={{
         from: "color",
         modifiers: [["brighter", 0.4]],
